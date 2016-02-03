@@ -1,7 +1,7 @@
 Sub randomFonts()
 '
 ' randomFonts 
-    Dim types(0 To 4) As String
+    Dim types(0 To 2) As String
     types(0) = "Merkucio Font4You"
     types(1) = "Eskal Font4You"
     types(2) = "Lorenco - Font4You"
