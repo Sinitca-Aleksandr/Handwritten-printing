@@ -6,6 +6,23 @@ Sub randomFonts()
     types(1) = "Eskal Font4You"
     types(2) = "Lorenco - Font4You"
     
+    Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+        .Text = " "
+        .Replacement.Text = "  "
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+    ActiveWindow.ActivePane.VerticalPercentScrolled = 0
+    
     For counter = 1 To 1000
     Selection.MoveRight Unit:=wdCharacter, Count:=1, Extend:=wdExtend
     Selection.Font.Name = types(Int(Rnd() * 3))
